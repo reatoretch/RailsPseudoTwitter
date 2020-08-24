@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   resources :registrations, only: [:new, :create]
   root to: 'registrations#new' # [!]Temporary name
   resources :users
