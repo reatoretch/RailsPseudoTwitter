@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :tweets
 
-  root to: 'registrations#new' # [!]Temporary name
+  root to: 'registrations#new'
 
 end
