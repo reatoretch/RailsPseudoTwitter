@@ -5,6 +5,9 @@ class CreateTweets < ActiveRecord::Migration[6.0]
       t.string :content
 
       t.timestamps
+      
+      t.index :user_id
+      t.index :created_at
     end
   end
 end
