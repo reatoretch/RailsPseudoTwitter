@@ -49,3 +49,7 @@
             .tweet-content
               %p
                 = t.content
+                - if t.user.followed_by? current_user
+                  = link_to "フォロー解除", user_follows_path(t.user), method: :delete
+                - else
+                  = link_to "フォロー", user_follows_path(t.user), method: :post
