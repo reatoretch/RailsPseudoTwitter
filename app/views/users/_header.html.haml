@@ -9,7 +9,7 @@
     = @user.bio
 
 %ul.nav.nav-tabs.nav-justified
-  %li.active
+  %li{ class: action_name == "show" ? "active" : nil }
     = link_to user_path(@user) do
       .text
         つぶやき
