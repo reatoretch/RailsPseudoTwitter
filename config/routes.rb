@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'settings/edit'
   resources :registrations, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:index, :show]
