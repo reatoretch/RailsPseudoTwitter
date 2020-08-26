@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_065208) do
+ActiveRecord::Schema.define(version: 2020_08_26_020246) do
 
   create_table "follows", force: :cascade do |t|
     t.integer "follower_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_065208) do
     t.string "name"
     t.string "screen_name"
     t.string "bio"
+    t.boolean "view_allowed", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
