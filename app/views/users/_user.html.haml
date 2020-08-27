@@ -1,0 +1,16 @@
+= div_for user, class: "list-group-item" do |u|
+  %h4.user
+    %span.user-name
+      = link_to u.name, user_path(u)
+    %span.user-id
+      @#{u.name}
+    - if !u.view_allowed
+      %span.user-view-allowed
+        = image_tag('key_image.png')
+  .bio
+    = u.bio
+  .follow-unfollow
+    - if u.followed_by? current_user
+      = link_to "フォロー解除", user_follows_path(u), method: :delete
+    - else
+      = link_to "フォロー", user_follows_path(u), method: :post

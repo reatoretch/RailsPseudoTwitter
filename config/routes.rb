@@ -1,6 +1,19 @@
 Rails.application.routes.draw do
-  resources :registrations, only: [:new, :create]
+
+  resource :registrations, only: [:new, :create]
+  resource :sessions, only: [:new, :create, :destroy]
+  resource :settings, only: [:edit, :update]
+  
+  resources :users, only: [:index, :show] do
+    resource :follows, only: [:create, :destroy]
+    get :follows, on: :member
+    get :followers, on: :member
+  end
+
+  resources :tweets do
+    get :timeline, on: :collection
+  end
+
   root to: 'registrations#new' # [!]Temporary name
-  resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
 end

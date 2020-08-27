@@ -1,6 +1,8 @@
-%p#notice= notice
+.col-xs-8#users-content
 
-
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', users_path
+  = render partial: "users/header"
+  .list-group
+    - if @user.tweets.empty?
+      .list-group-item
+        まだツイートはありません
+    = render partial: "users/tweet", collection: @user.tweets 
