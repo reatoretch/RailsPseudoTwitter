@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_login
+
   # GET /users
   # GET /users.json
   def index
