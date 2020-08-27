@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: ユーザー名が空です
+              taken: ユーザー名は既に利用されています
+              invalid: ユーザー名は半角英数字のみ利用できます
+              too_long: ユーザー名は２４文字以内にしてください
+              too_short: ユーザー名は４文字以上にしてください
+            email:
+              blank: メールアドレスが空です
+              taken: メールアドレスが既に使用済みです
+            password:
+              blank: パスワードが空です
+              too_long: パスワードは24文字以内で使用できます
+              too_short: パスワードは６文字以上で利用できます
+            password_confirmation:
+              blank: 確認用パスワードが空です
+              confirmation: 確認用パスワードが一致しません
+            bio:
+              too_long: プロフィールは２００文字以内で設定してください
