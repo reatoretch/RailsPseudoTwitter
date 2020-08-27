@@ -18,4 +18,8 @@ class User < ApplicationRecord
   def followed_by? user
     inverse_follows.where(follower_id: user.id).exists?
   end
+  
+  def follow_by? user
+    follows.where(inverse_follower_id: user.id).exists?
+  end
 end

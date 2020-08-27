@@ -4,6 +4,9 @@
       = link_to u.name, user_path(u)
     %span.user-id
       @#{u.name}
+    - if !u.view_allowed
+      %span.user-view-allowed
+        = image_tag('key_image.png')
   .bio
     = u.bio
   .follow-unfollow

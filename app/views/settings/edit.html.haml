@@ -15,4 +15,9 @@
         .form-group
           = f.label :bio, "プロフィール(200文字)", class: "control-label"
           = f.text_area :bio, class: "form-control"
+        .form-group
+          = f.label :view_allowed, "通常アカウント", value: true, checked: true
+          = f.radio_button :view_allowed, true
+          = f.label :view_allowed, "鍵アカウント", value: false
+          = f.radio_button :view_allowed, false 
         = f.submit "送信する", class: "btn btn-success"
