@@ -27,6 +27,8 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 # Use div_for
 gem 'record_tag_helper'
+# Use Font Awesome
+gem 'font-awesome-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
