@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :tweets do
     get :timeline, on: :collection
+    get :show_image, on: :member
   end
 
   root to: 'registrations#new' # [!]Temporary name

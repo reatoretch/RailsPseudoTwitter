@@ -69,6 +69,11 @@ class TweetsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def show_image
+    @tweet = Tweet.find(params[:id])
+    send_data @tweet.upload_file, filename: 'image.png', type: @tweet.upload_file.content_type, disposition: 'inline'
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -78,6 +83,6 @@ class TweetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tweet_params
-      params.require(:tweet).permit(:content)
+      params.require(:tweet).permit(:content,:upload_file)
     end
 end

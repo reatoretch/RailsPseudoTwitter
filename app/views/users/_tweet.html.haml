@@ -11,6 +11,10 @@
     .tweet-content
       %p
         = t.content
+      - if !t.upload_file.nil?
+        %p
+          = image_tag(show_image_tweet_url(t)) 
+          //= img_tag(url_for(controller: :tweets, action: :show_image)) 
       .content-footer   
         - if t.user.followed_by? current_user
           = link_to "フォロー解除", user_follows_path(t.user), method: :delete
