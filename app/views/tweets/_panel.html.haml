@@ -28,4 +28,7 @@
       = form_for @tweet do |f|
         .form-group
           = f.text_area :content, class: "form-control"
+          = f.label :upload_file, class: "form-image" do
+            %i.fa.fa-image
+            = f.file_field :upload_file, accept: 'image/jpg,image/jpeg,image/png,image/gif'
         = f.submit "つぶやく", class: "btn btn-success"
