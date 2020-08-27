@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_020246) do
+ActiveRecord::Schema.define(version: 2020_08_27_012301) do
 
   create_table "follows", force: :cascade do |t|
     t.integer "follower_id"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_08_26_020246) do
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.binary "upload_file"
     t.index ["created_at"], name: "index_tweets_on_created_at"
     t.index ["user_id"], name: "index_tweets_on_user_id"
   end
